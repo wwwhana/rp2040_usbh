@@ -21,7 +21,7 @@ static uint8_t          hid_instance;
 static bool             hid_disconnect_flag;
 static uint8_t          pre_keyreport[8];
 #define LED_BLINK_TIME_MS 50
-#define KQ_PIN_LED 7
+#define KQ_PIN_LED 25
 #define MATRIX_MSBTN_ROW 22
 
 extern void busy_wait_us(uint64_t delay_us);

@@ -31,8 +31,8 @@
 
 #define CFG_TUH_ENUMERATION_BUFSIZE 256
 
-#define CFG_TUH_HUB                 1
-#define CFG_TUH_DEVICE_MAX          (CFG_TUH_HUB ? 4 : 1) 
+#define CFG_TUH_HUB                 0
+#define CFG_TUH_DEVICE_MAX          (CFG_TUH_HUB ? 4 : 1)
 
 #define CFG_TUH_HID                  8
 #define CFG_TUH_HID_EPIN_BUFSIZE    64

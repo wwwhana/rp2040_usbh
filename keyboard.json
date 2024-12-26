@@ -143,49 +143,8 @@
                 {"matrix": [12, 2], "x": 18.5, "y": 5.5, "w": 2, "label": "KC_P0"},
                 {"matrix": [12, 3], "x": 20.5, "y": 5.5, "label": "KC_PDOT"}
             ]
-        },
-
-        "LAYOUT_tartarus2": {
-            "layout": [
-                // Row 0
-                {"matrix": [3,6], "x": 0, "y": 0, "label": "01-KC_1"},
-                {"matrix": [3,7], "x": 1, "y": 0, "label": "02-KC_2"},
-                {"matrix": [4,0], "x": 2, "y": 0, "label": "03-KC_3"},
-                {"matrix": [4,1], "x": 3, "y": 0, "label": "04-KC_4"},
-                {"matrix": [4,2], "x": 4, "y": 0, "label": "05-KC_5"},
-
-                // Row 1
-                {"matrix": [5,3], "x": 0, "y": 1, "label": "06-KC_TAB"},
-                {"matrix": [2,4], "x": 1, "y": 1, "label": "07-KC_Q"},
-                {"matrix": [3,2], "x": 2, "y": 1, "label": "08-KC_W"},
-                {"matrix": [1,0], "x": 3, "y": 1, "label": "09-KC_E"},
-                {"matrix": [2,5], "x": 4, "y": 1, "label": "10-KC_R"},
-
-                // Row 2
-                {"matrix": [7,1], "x": 0, "y": 2, "label": "11-KC_CAPS"},
-                {"matrix": [0,4], "x": 1, "y": 2, "label": "12-KC_A"},
-                {"matrix": [2,6], "x": 2, "y": 2, "label": "13-KC_S"},
-                {"matrix": [0,7], "x": 3, "y": 2, "label": "14-KC_D"},
-                {"matrix": [1,1], "x": 4, "y": 2, "label": "15-KC_F"},
-
-                // Row 3
-                {"matrix": [28,1], "x": 0, "y": 3, "label": "16-KC_LSFT"},
-                {"matrix": [3,5], "x": 1, "y": 3, "label": "17-KC_Z"},
-                {"matrix": [3,3], "x": 2, "y": 3, "label": "18-KC_X"},
-                {"matrix": [0,6], "x": 3, "y": 3, "label": "19-KC_C"},
-
-                // Additional Keys
-                {"matrix": [13,1], "x": 5, "y": 1, "label": "SW-KC_TRNS"},
-                {"matrix": [13,0], "x": 5, "y": 2, "label": "SC-KC_TRNS"},
-                {"matrix": [28,2], "x": 5, "y": 0, "label": "thumb-KC_LALT"},
-                {"matrix": [5,4], "x": 4, "y": 3, "w": 2, "label": "20-KC_SPC"},
-
-                // Arrow Keys
-                {"matrix": [10,0], "x": 6, "y": 0, "label": "DPAD_LEFT-KC_LEFT"},
-                {"matrix": [9,7], "x": 6, "y": 1, "label": "DPAD_RIGHT-KC_RGHT"},
-                {"matrix": [10,2], "x": 6, "y": 2, "label": "DPAD_UP-KC_UP"},
-                {"matrix": [10,1], "x": 6, "y": 3, "label": "DPAD_DOWN-KC_DOWN"}
-            ]
         }
     }
+
+
 }
