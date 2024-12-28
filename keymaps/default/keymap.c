@@ -2,10 +2,9 @@
 #include QMK_KEYBOARD_H
 
 enum {
-    TD_WIN1,
-    TD_WIN2,
-    TD_MAC1,
-    TD_MAC2,
+    TD_FNW,
+    TD_FNM,
+    TD_NL,
 };
 
 enum {
@@ -15,10 +14,9 @@ enum {
     _FN
 };
 
-#define TD_FNW1 TD(TD_WIN1)
-#define TD_FNW2 TD(TD_WIN2)
-#define TD_FNM1 TD(TD_MAC1)
-#define TD_FNM2 TD(TD_MAC2)
+#define KC_FNW TD(TD_FNW)
+#define KC_FNM TD(TD_FNM)
+#define KC_NL TD(TD_NL)
 
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
@@ -38,7 +36,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      * ├────┬───┴┬──┴─┬─┴───┴───┴───┴───┴───┴──┬┴───┼───┴┬────┬────┤ ┌───┼───┼───┐ ├───┴───┼───┤Ent│
      * │Ctrl│GUI │Alt │                        │ Alt│*FN │Menu│Ctrl│ │ ← │ ↓ │ → │ │   0   │ . │   │
      * └────┴────┴────┴────────────────────────┴────┴────┴────┴────┘ └───┴───┴───┘ └───────┴───┴───┘
-     * *FN = Original keyboard FN
+     * *FN = Original keyboard FN, OR RGUI
      */
 
 [_WIN] = LAYOUT_fullsize_ansi(
@@ -48,7 +46,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_TAB,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,    KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,     KC_LBRC, KC_RBRC, KC_BSLS,    KC_DEL,  KC_END,  KC_PGDN,    KC_P7,   KC_P8,   KC_P9,   KC_PPLS,
         KC_CAPS, KC_A,    KC_S,    KC_D,    KC_F,    KC_G,    KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN,  KC_QUOT,          KC_ENT,                                            KC_P4,   KC_P5,   KC_P6,
         KC_LSFT,          KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    KC_N,    KC_M,    KC_COMM, KC_DOT,   KC_SLSH,          KC_RSFT,             KC_UP,               KC_P1,   KC_P2,   KC_P3,   KC_PENT,
-        KC_LCTL, KC_LGUI, KC_LALT,                            KC_SPC,                             KC_RALT,  _______, TD_FNW1, TD_FNW2,    KC_LEFT, KC_DOWN, KC_RGHT,    KC_P0,            KC_PDOT
+        KC_LCTL, KC_LGUI, KC_LALT,                            KC_SPC,                             KC_FNW,    KC_RGUI, KC_APP, KC_NL,    KC_LEFT, KC_DOWN, KC_RGHT,    KC_P0,            KC_PDOT
     ),
 [_MAC] = LAYOUT_fullsize_ansi(
         KC_ESC,           KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,   KC_F7,   KC_F8,   KC_F9,    KC_F10,  KC_F11,  KC_F12,     KC_F13,  KC_F14,  KC_F15,
@@ -56,23 +54,23 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_TAB,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,    KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,     KC_LBRC, KC_RBRC, KC_BSLS,    KC_DEL,  KC_END,  KC_PGDN,    KC_P7,   KC_P8,   KC_P9,   KC_PPLS,
         KC_CAPS, KC_A,    KC_S,    KC_D,    KC_F,    KC_G,    KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN,  KC_QUOT,          KC_ENT,                                            KC_P4,   KC_P5,   KC_P6,
         KC_LSFT,          KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    KC_N,    KC_M,    KC_COMM, KC_DOT,   KC_SLSH,          KC_RSFT,             KC_UP,               KC_P1,   KC_P2,   KC_P3,   KC_PENT,
-        KC_LCTL, KC_LALT, KC_LGUI,                            KC_SPC,                             _______,  _______, TD_FNM1, TD_FNM2,    KC_LEFT, KC_DOWN, KC_RGHT,    KC_P0,            KC_PDOT
+        KC_LCTL, KC_LOPT, KC_LCMD,                            KC_SPC,                             KC_FNM,   KC_RCMD, KC_ROPT, KC_NL,      KC_LEFT, KC_DOWN, KC_RGHT,    KC_P0,            KC_PDOT
     ),
 [_NUM] = LAYOUT_fullsize_ansi(
-        _______,          _______, _______, _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______, _______, _______,     _______, _______, _______,
-        _______, KC_ACL0, KC_ACL1, KC_ACL2, _______,    _______,    _______,    _______,    _______,     _______,   KC_PSLS,    KC_PAST, KC_PMNS, _______,     _______, _______, _______,    _______,  _______,    _______, _______,
-        KC_BTN3, KC_BTN1, KC_MS_U, KC_BTN2, _______,    _______,    _______,    _______,    _______,    _______,    KC_P7,      KC_P8,   KC_P9,   KC_PPLS,     _______, _______, _______,    _______,   _______,   _______, _______,
-        _______, KC_MS_L, KC_MS_D, KC_MS_R, _______,    _______,    _______,    _______,    _______,    KC_P4,      KC_P5,      KC_P6,            KC_PENT,                                   _______,   _______,   _______,
-        _______,          _______, _______, _______,    _______,    _______,    _______,    _______,    KC_P1,      KC_P2,      KC_P3,            _______,              KC_WH_U,             _______,   _______,   _______, _______,
-        _______, _______, _______,                                  KC_P0,                                          KC_PDOT,    _______, _______, _______,     KC_WH_L, KC_WH_D, KC_WH_R,    _______,              _______
+        _______,          _______, _______, _______, _______,    _______,    _______,    _______,    _______,    _______,    _______, _______, _______,     _______, _______, _______,
+        _______, KC_ACL0, KC_ACL1, KC_ACL2, XXXXXXX, XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,     KC_NUM,    KC_PSLS,    KC_PAST, KC_PMNS, _______,     _______, _______, _______,    _______,   _______,    _______, _______,
+        _______, KC_BTN1, KC_MS_U, KC_BTN2, XXXXXXX, XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    KC_CALC,    KC_P7,      KC_P8,   KC_P9,   KC_PPLS,     _______, _______, _______,    _______,   _______,   _______, _______,
+        KC_BTN3, KC_MS_L, KC_MS_D, KC_MS_R, XXXXXXX, XXXXXXX,    XXXXXXX,    XXXXXXX,    XXXXXXX,    KC_P4,      KC_P5,      KC_P6,            KC_PENT,                                   _______,   _______,   _______,
+        _______,          XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,    XXXXXXX,    XXXXXXX,      KC_P0,    KC_P1,      KC_P2,      KC_P3,            _______,              KC_WH_U,             _______,   _______,   _______, _______,
+        _______, _______, _______,                               _______,                                        KC_PDOT,    _______, _______, _______,     KC_WH_L, KC_WH_D, KC_WH_R,    _______,              _______
     ),
   [_FN] = LAYOUT_fullsize_ansi(
-      EE_CLR,              _______, _______, _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______, _______, _______,     _______, _______, _______,
-      _______,    _______, _______, _______, _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______, _______, _______,     _______, _______, _______,    _______,   _______,   _______, _______,
-      _______,    _______, _______, _______, _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______, _______, _______,     _______, _______, _______,    _______,   _______,   _______, _______,
-      _______,    _______, _______, _______, _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,          _______,                                   _______,   _______,   _______,
-      _______,             _______, _______, _______,    _______,    _______,    _______,    _______,    _______,    _______,    _______,          _______,              _______,             _______,   _______,   _______, _______,
-      _______,    _______, _______,                                  _______,                                        _______,    _______, _______, _______,     _______, _______, _______,    _______,              _______
+      QK_BOOT,             _______, _______, _______, _______,    _______,    _______,    _______,    _______,    _______,    _______, _______, _______,     _______, _______, KC_LSCR,
+      _______,    _______, _______, KC_LPAD, KC_MCTL, KC_WSCH,    KC_ASST,    KC_SLEP,    KC_MPRV,    KC_MPLY,    KC_MNXT,    KC_MUTE, KC_MSEL, KC_EJCT,     _______, _______, _______,    _______,   _______,   _______, _______,
+      _______,    _______, _______, _______, _______, _______,    _______,    _______,    _______,    _______,    _______,    _______, _______, _______,     _______, _______, _______,    _______,   _______,   _______, _______,
+      KC_LCAP,    _______, _______, _______, _______, _______,    _______,    _______,    _______,    _______,    _______,    _______,          _______,                                   _______,   _______,   _______,
+      _______,             _______, _______, _______, _______,    _______,    _______,    _______,    _______,    _______,    _______,          _______,              KC_BRIU,             _______,   _______,   _______, _______,
+      _______,    _______, _______,                               _______,                                        _______,    _______, KC_LNG1, KC_LNG2,     KC_VOLD, KC_BRID, KC_VOLU,    _______,              _______
   )
 };
 
@@ -150,10 +148,8 @@ bool process_detected_host_os_kb(os_variant_t detected_os) {
 
 // Tap Dance definitions
 tap_dance_action_t tap_dance_actions[] = {
-    // Tap once for Escape, twice for Caps Lock
-    [TD_WIN1] = ACTION_TAP_DANCE_LAYER_MOVE(KC_APP, 3),
-    [TD_WIN2] = ACTION_TAP_DANCE_LAYER_TOGGLE(KC_RCTL, 2),
-    [TD_MAC1] = ACTION_TAP_DANCE_LAYER_MOVE(KC_ROPT, 3),
-    [TD_MAC2] = ACTION_TAP_DANCE_LAYER_TOGGLE(KC_RCTL, 2),
+    [TD_FNW] = ACTION_TAP_DANCE_LAYER_MOVE(KC_RALT, _FN),
+    [TD_FNM] = ACTION_TAP_DANCE_LAYER_MOVE(KC_RCMD, _FN),
+    [TD_NL] = ACTION_TAP_DANCE_LAYER_TOGGLE(KC_RCTL, _NUM),
 };
 
