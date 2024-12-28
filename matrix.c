@@ -97,7 +97,7 @@ static bool send_led_report(uint8_t* leds) {
 }
 
 static volatile bool set_protocol_complete = false;
-void                 tuh_hid_set_protocol_complete_cb(uint8_t dev_addr, uint8_t instance, uint8_t protocol) {
+void tuh_hid_set_protocol_complete_cb(uint8_t dev_addr, uint8_t instance, uint8_t protocol) {
     set_protocol_complete = true;
 }
 
