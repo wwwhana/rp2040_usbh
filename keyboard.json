@@ -1,7 +1,7 @@
 {
-    "manufacturer": "Adafruit",
+    "manufacturer": "Rapberry",
     "keyboard_name": "Rp2040 USB Host",
-    "maintainer": "sekigon-gonnoc",
+    "maintainer": "wwwhana",
     "bootloader": "rp2040",
     "diode_direction": "COL2ROW",
     "features": {

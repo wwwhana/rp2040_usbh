@@ -33,11 +33,11 @@ git submodule update --init --recursive
 After clone this repository to `keyboards/converter` then run
 
 ```
-git clone https://github.com/wwwhana/adafruitrp2040_usbh.git _your_qmk_repo/keyboards/converter/adafruit_rp2040_usbh
-cd _your_qmk_repo/keyboards/converter/adafruit_rp2040_usbh
+git clone https://github.com/wwwhana/rp2040_usbh.git _your_qmk_repo/keyboards/converter/rp2040_usbh
+cd _your_qmk_repo/keyboards/converter/rp2040_usbh
 git submodule update --init --recursive
 cd ../../..
-make converter/adafruit_rp2040_usbh:default
+make converter/rp2040_usbh:default
 ```
 
 ## TODO:
