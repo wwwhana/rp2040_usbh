@@ -3,9 +3,8 @@
 #pragma weak backing_store_lock
 #pragma weak backing_store_unlock
 
-#define NO_PRINT
 #define FORCE_NKRO
-#define TAPPING_TERM 175
+#define TAPPING_TERM 300
 
 #define OS_DETECTION_KEYBOARD_RESET
 #define OS_DETECTION_SINGLE_REPORT

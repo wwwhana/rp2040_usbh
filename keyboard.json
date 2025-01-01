@@ -11,7 +11,7 @@
         "extrakey": true,
         "mousekey": true,
         "nkro": true,
-        "virtser": true,
+        "virtser": false,
         "pointing_device": true
     },
     "qmk": {

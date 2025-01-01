@@ -21,21 +21,19 @@ This distribution is generic, and includes layouts and generic keymaps for :
 
 ## How to use this repository
 
-Install using the normal guide: [setup your qmk envorinment](https://github.com/qmk/qmk_firmware/blob/master/docs/newbs_getting_started.md). This will install the latest version of QMK.
+Install using the normal guide: [setup your qmk envorinment](https://github.com/qmk/qmk_firmware/blob/master/docs/newbs_getting_started.md). This will install the latest version of VIAL-QMK.
+i don't know why not working orignal QMK
 
 Then run the following:
 
 ```
-git checkout 0.24.0 -b qmk-0.24.0
 git submodule update --init --recursive
 ```
-
-This will install QMK 0.24. This is a requisite step. Don't skip it.
 
 After clone this repository to `keyboards/converter` then run
 
 ```
-git clone https://github.com/whyaaronbailey/adafruitrp2040_usbh.git _your_qmk_repo/keyboards/converter/adafruit_rp2040_usbh
+git clone https://github.com/wwwhana/adafruitrp2040_usbh.git _your_qmk_repo/keyboards/converter/adafruit_rp2040_usbh
 cd _your_qmk_repo/keyboards/converter/adafruit_rp2040_usbh
 git submodule update --init --recursive
 cd ../../..
@@ -44,7 +42,6 @@ make converter/adafruit_rp2040_usbh:default
 
 ## TODO:
 
-- An issue where it doesn't work unless the reset button is pressed
-- Improve documentation
+- not working VIA or VIAL
 - Scroll wheel and scroll click customization (need to implement additional interfaces)
 - LED light control

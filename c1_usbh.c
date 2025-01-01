@@ -9,7 +9,6 @@
 
 // Correct pin definitions for Adafruit Feather RP2040 with USB Host
 #define PIO_USB_PIN_DP 16 // D+ on GPIO 16
-#define PIN_VBUS       18 // VBUS enable on GPIO 18
 
 // dummy implementation
 void alarm_pool_add_repeating_timer_us(void) {}
@@ -22,9 +21,6 @@ void c1_usbh(void) {
     pio_cfg.skip_alarm_pool         = true;
     tuh_configure(1, TUH_CFGID_RPI_PIO_USB_CONFIGURATION, &pio_cfg);
 
-    gpio_init(PIN_VBUS); // Use correct VBUS enable pin
-    gpio_set_dir(PIN_VBUS, GPIO_OUT);
-    gpio_put(PIN_VBUS, 1);
 
     tuh_init(1);
     c1_start_timer();
