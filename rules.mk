@@ -6,7 +6,7 @@ POINTING_DEVICE_DRIVER = custom
 SRC += lib/Pico-PIO-USB/src/pio_usb.c
 SRC += lib/Pico-PIO-USB/src/pio_usb_host.c
 SRC += lib/Pico-PIO-USB/src/usb_crc.c
-VPATH += keyboards/converter/adafruit_rp2040_usbh/lib/Pico-PIO-USB/src
+VPATH += keyboards/converter/rp2040_usbh/lib/Pico-PIO-USB/src
 
 SRC += lib/tinyusb/src/tusb.c
 SRC += lib/tinyusb/src/common/tusb_fifo.c
@@ -14,7 +14,7 @@ SRC += lib/tinyusb/src/host/usbh.c
 SRC += lib/tinyusb/src/host/hub.c
 SRC += lib/tinyusb/src/class/hid/hid_host.c
 SRC += lib/tinyusb/src/portable/raspberrypi/pio_usb/hcd_pio_usb.c
-VPATH += keyboards/converter/adafruit_rp2040_usbh/lib/tinyusb/src
+VPATH += keyboards/converter/rp2040_usbh/lib/tinyusb/src
 
 SRC += lib/pico-sdk/src/rp2_common/hardware_dma/dma.c
 SRC += lib/pico-sdk/src/host/pico_stdlib/stdlib.c

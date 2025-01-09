@@ -1,2 +1,2 @@
-include keyboards/converter/adafruit_rp2040_usbh/parser/rules.mk
-VPATH += keyboards/converter/adafruit_rp2040_usbh/parser
+include keyboards/converter/rp2040_usbh/parser/rules.mk
+VPATH += keyboards/converter/rp2040_usbh/parser
