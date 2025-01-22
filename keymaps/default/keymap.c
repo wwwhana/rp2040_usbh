@@ -9,13 +9,6 @@ enum {
     _FN
 };
 
-enum {
-    TD_FNM = 0,
-    TD_FNW
-};
-
-#define TD_RCMD TD(TD_FNM)
-#define TD_RALT TD(TD_FNW)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
@@ -39,21 +32,21 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 
 [_MAC] = LAYOUT_fullsize_ansi(
-    KC_ESC,           KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,   KC_F7,   KC_F8,   KC_F9,    KC_F10,  KC_F11,  KC_F12,     KC_F13,  KC_F14,  KC_F15,
+    KC_ESC,           KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,   KC_F7,   KC_F8,   KC_F9,    KC_F10,  KC_F11,  KC_F12,     KC_F13,  KC_F14,  KC_F15, 
     KC_GRV,  KC_1,    KC_2,    KC_3,    KC_4,    KC_5,    KC_6,    KC_7,    KC_8,    KC_9,    KC_0,     KC_MINS, KC_EQL,  KC_BSPC,    KC_INS,  KC_HOME, KC_PGUP,    KC_NUM,  KC_PSLS, KC_PAST, KC_PMNS,
     KC_TAB,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,    KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,     KC_LBRC, KC_RBRC, KC_BSLS,    KC_DEL,  KC_END,  KC_PGDN,    KC_P7,   KC_P8,   KC_P9,   KC_PPLS,
     KC_CAPS, KC_A,    KC_S,    KC_D,    KC_F,    KC_G,    KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN,  KC_QUOT,          KC_ENT,                                            KC_P4,   KC_P5,   KC_P6,
     KC_LSFT,          KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    KC_N,    KC_M,    KC_COMM, KC_DOT,   KC_SLSH,          KC_RSFT,             KC_UP,               KC_P1,   KC_P2,   KC_P3,   KC_PENT,
-    KC_LCTL, KC_LOPT, KC_LCMD,                            KC_SPC,                             TD_RCMD,  KC_RCMD, KC_ROPT, KC_RCTL,      KC_LEFT, KC_DOWN, KC_RGHT,    KC_P0,            KC_PDOT
+    KC_LCTL, KC_LOPT, KC_LCMD,                            LT(_FN, KC_SPC),                    KC_RCMD,  KC_RCMD, KC_ROPT, KC_RCTL,    KC_LEFT, KC_DOWN, KC_RGHT,    KC_P0,            KC_PDOT
 ),
 [_WIN] = LAYOUT_fullsize_ansi(
 
-    KC_ESC,           KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,   KC_F7,   KC_F8,   KC_F9,    KC_F10,  KC_F11,  KC_F12,     KC_PSCR, KC_SCRL, KC_PAUS,
-    KC_GRV,  KC_1,    KC_2,    KC_3,    KC_4,    KC_5,    KC_6,    KC_7,    KC_8,    KC_9,    KC_0,     KC_MINS, KC_EQL,  KC_BSPC,    KC_INS,  KC_HOME, KC_PGUP,    KC_NUM,  KC_PSLS, KC_PAST, KC_PMNS,
-    KC_TAB,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,    KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,     KC_LBRC, KC_RBRC, KC_BSLS,    KC_DEL,  KC_END,  KC_PGDN,    KC_P7,   KC_P8,   KC_P9,   KC_PPLS,
-    KC_CAPS, KC_A,    KC_S,    KC_D,    KC_F,    KC_G,    KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN,  KC_QUOT,          KC_ENT,                                            KC_P4,   KC_P5,   KC_P6,
-    KC_LSFT,          KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    KC_N,    KC_M,    KC_COMM, KC_DOT,   KC_SLSH,          KC_RSFT,             KC_UP,               KC_P1,   KC_P2,   KC_P3,   KC_PENT,
-    KC_LCTL, KC_LGUI, KC_LALT,                            KC_SPC,                             TD_RALT,  KC_RGUI, KC_APP,  KC_RCTL,    KC_LEFT, KC_DOWN, KC_RGHT,    KC_P0,            KC_PDOT
+    _______,           _______,   _______,   _______,   _______,   _______,   _______,   _______,   _______,   _______,  _______, _______, _______,    KC_PSCR, KC_SCRL, KC_PAUS,
+    _______, _______,  _______,   _______,   _______,   _______,   _______,   _______,   _______,   _______,   _______,  _______, _______, _______,    _______, _______, _______,     _______,  _______, _______, _______,
+    _______, _______,  _______,   _______,   _______,   _______,   _______,   _______,   _______,   _______,   _______,  _______, _______, _______,    _______, _______, _______,     _______,  _______, _______, _______,
+    _______, _______,  _______,   _______,   _______,   _______,   _______,   _______,   _______,   _______,   _______,  _______,          _______,                                   _______,  _______, _______,
+    _______,           _______,   _______,   _______,   _______,   _______,   _______,   _______,   _______,   _______,  _______,          _______,             _______,               _______,  _______, _______, _______,
+    KC_LCTL, KC_LGUI,  KC_LALT,                                    _______,                                    KC_RALT,  KC_RGUI, KC_APP,  KC_RCTL,    _______, _______, _______,     _______,           _______
 ),
 [_NUM] = LAYOUT_fullsize_ansi(
     _______,          _______, _______, _______, _______,    _______,    _______,    _______,    _______,    _______,    _______, _______, _______,     _______, _______, _______,
@@ -64,17 +57,19 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     _______, _______, _______,                               _______,                                        KC_PDOT,    _______, _______, _______,     KC_WH_L, KC_WH_D, KC_WH_R,    _______,              _______
 ),
 [_FN] = LAYOUT_fullsize_ansi(
-    QK_BOOT,             _______,  KC_LPAD, KC_MCTL, KC_WSCH,    KC_ASST,    KC_SLEP,    KC_MPRV,    KC_MPLY,    KC_MNXT,    KC_MUTE, KC_MSEL, KC_EJCT,     _______, _______, KC_LSCR,
+    QK_BOOT,             _______,  KC_LPAD, KC_MCTL, KC_WSCH,    KC_ASST,    KC_SLEP,    KC_MPRV,    KC_MPLY,    KC_MNXT,    KC_MUTE, KC_MSEL, KC_EJCT,     _______, KC_PAUS, _______,
     _______,    _______, _______,  _______, _______, _______,    _______,    _______,    _______,    _______,    _______,    _______, _______, _______,     _______, _______, _______,    _______,   _______,   _______, _______,
     _______,    _______, TG(_WIN), _______, _______, _______,    _______,    _______,    _______,    _______,    _______,    _______, _______, _______,     _______, _______, _______,    _______,   _______,   _______, _______,
-    KC_LCAP,    _______, _______,  _______, _______, _______,    _______,    _______,    _______,    _______,    _______,    _______,          _______,                                   _______,   _______,   _______,
-    _______,             _______,  _______, _______, _______,    _______,    _______,    _______,    _______,    _______,    TG(_NUM),          _______,              KC_BRIU,             _______,   _______,   _______, _______,
-    _______,    _______, _______,                                _______,                                        _______,    _______, KC_LNG1, KC_LNG2,     KC_VOLD, KC_BRID, KC_VOLU,    _______,              _______
+    KC_LCAP,    _______,  KC_SPC,  _______, _______, _______,    _______,    _______,    _______,    _______,    _______,    _______,          _______,                                   _______,   _______,   _______,
+    _______,             _______,  _______, _______, _______,    _______,    _______,    _______,    _______,    _______,     TG(_NUM),         _______,              KC_BRIU,             _______,   _______,   _______, _______,
+    _______,    _______, _______,                                _______,                                        KC_LNG1,    _______, _______, KC_LNG2,     KC_VOLD, KC_BRID, KC_VOLU,    _______,              _______
 )
 };
 
+
+
 const key_override_t delete_key_override = ko_make_basic(MOD_MASK_SHIFT, KC_BSPC, KC_DEL);
-const key_override_t esc_override = ko_make_basic(MOD_BIT(KC_RCMD), KC_GRV, KC_ESC);
+const key_override_t esc_override = ko_make_basic(MOD_BIT(KC_LCTL), KC_GRV, KC_ESC);
 const key_override_t f1_override = ko_make_basic(MOD_BIT(KC_RCMD), KC_1, KC_F1);
 const key_override_t f2_override = ko_make_basic(MOD_BIT(KC_RCMD), KC_2, KC_F2);
 const key_override_t f3_override = ko_make_basic(MOD_BIT(KC_RCMD), KC_3, KC_F3);
@@ -95,10 +90,10 @@ const key_override_t home_override = ko_make_basic(MOD_BIT(KC_RCMD), KC_A, KC_HO
 const key_override_t end_override = ko_make_basic(MOD_BIT(KC_RCMD), KC_Z, KC_END);
 const key_override_t pgup_override = ko_make_basic(MOD_BIT(KC_RCMD), KC_S, KC_PGUP);
 const key_override_t pgdn_override = ko_make_basic(MOD_BIT(KC_RCMD), KC_X, KC_PGDN);
-const key_override_t mc_left_override = ko_make_basic(MOD_BIT(KC_RCTL),KC_COMM, LCTL(KC_LEFT));
-const key_override_t mc_right_override = ko_make_basic(MOD_BIT(KC_RCTL), KC_DOT, LCTL(KC_RGHT));
-const key_override_t code_left_override = ko_make_basic(MOD_BIT(KC_RCMD), KC_COMM, LOPT(LCMD(KC_LEFT)));
-const key_override_t code_right_override = ko_make_basic(MOD_BIT(KC_RCMD), KC_DOT, LOPT(LCMD(KC_RGHT)));
+// const key_override_t mc_left_override = ko_make_basic(MOD_BIT(KC_RCTL),KC_COMM, LCTL(KC_LEFT));
+// const key_override_t mc_right_override = ko_make_basic(MOD_BIT(KC_RCTL), KC_DOT, LCTL(KC_RGHT));
+// const key_override_t code_left_override = ko_make_basic(MOD_BIT(KC_RCMD), KC_COMM, LCTL(KC_MINS));
+// const key_override_t code_right_override = ko_make_basic(MOD_BIT(KC_RCMD), KC_DOT, MEH(KC_MINS));
 
 const key_override_t *key_overrides[] = {
     &delete_key_override,
@@ -123,10 +118,10 @@ const key_override_t *key_overrides[] = {
     &end_override,
     &pgup_override,
     &pgdn_override,
-    &mc_left_override,
-    &mc_right_override,
-    &code_left_override,
-    &code_right_override,
+    // &mc_left_override,
+    // &mc_right_override,
+    // &code_left_override,
+    // &code_right_override,
     NULL
 };
 
@@ -140,7 +135,6 @@ bool process_detected_host_os_kb(os_variant_t detected_os) {
     switch (detected_os) {
         case OS_MACOS:
         case OS_IOS:
-            layer_on(_MAC);
             break;
         case OS_WINDOWS:
         case OS_LINUX:
@@ -153,42 +147,7 @@ bool process_detected_host_os_kb(os_variant_t detected_os) {
     return true;
 }
 
-void td_mac_layer_finished(tap_dance_state_t *state, void *user_data) {
-    if(state->count == 1  && !state->interrupted) {
-        register_code(KC_RCMD);
-    }else {
-        unregister_code(KC_RALT);
-        layer_on(_FN);  // 원하는 레이어 번호로 변경
-    }
-}
-
-
-void td_mac_layer_reset(tap_dance_state_t *state, void *user_data) {
-    unregister_code(KC_RCMD);
-    layer_off(_FN);  // 원하는 레이어 번호로 변경
-
-}
-
-void td_win_layer_finished(tap_dance_state_t *state, void *user_data) {
-    if(state->count == 1 && !state->interrupted) {
-        register_code(KC_RALT);
-    }else if(state->count > 1)  {
-        unregister_code(KC_RALT);
-        layer_on(_FN);  // 원하는 레이어 번호로 변경
-    }
-}
-
-
-void td_win_layer_reset(tap_dance_state_t *state, void *user_data) {
-    unregister_code(KC_RALT);
-    layer_off(_FN);  // 원하는 레이어 번호로 변경
-
-}
-
-
 
 tap_dance_action_t tap_dance_actions[] = {
-    [TD_FNM] = ACTION_TAP_DANCE_FN_ADVANCED(NULL, td_mac_layer_finished,  td_mac_layer_reset),
-    [TD_FNW] = ACTION_TAP_DANCE_FN_ADVANCED(NULL, td_win_layer_finished,  td_win_layer_reset)
 };
 
